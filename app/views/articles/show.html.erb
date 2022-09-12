@@ -1,0 +1,18 @@
+
+
+ 
+
+<% if (@article == nil) %>
+    <h1>The article id doesnt exist.</h1>
+<%  else %>
+    <h1>Testing the article no. :<%= @article.id  %> </h1>
+    <h2>The title is :<%= @article.title  %></h2>
+    <h2>The description is : <%= @article.description %> </h2> 
+
+    <p>
+     <%= link_to 'Edit', edit_article_path(@article)%>      |
+     <%= link_to 'Delete', article_path(@article), method: :delete, data: {confirm: "Are you sure"}%> |
+     <%= link_to 'All_Articles', articles_path%>
+    </p>    
+<%end%>
+
